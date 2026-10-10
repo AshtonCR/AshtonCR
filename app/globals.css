@@ -6,7 +6,7 @@ body { background: #f6f2ea; color: #14110f; }
 
 /* Tarjeta de producto: hover en escritorio, deslizar en celular */
 .media-hover { display: none; }
-.media-swipe { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.media-swipe { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; }
 .media-swipe::-webkit-scrollbar { display: none; }
 .media-swipe > img { flex: 0 0 100%; scroll-snap-align: start; }
 @media (hover: hover) and (pointer: fine) {
@@ -15,7 +15,7 @@ body { background: #f6f2ea; color: #14110f; }
   .media-hover img { transition: opacity .35s ease; }
   .media-hover img + img { position: absolute; inset: 0; opacity: 0; }
   .card:hover .media-hover img + img,
-  .card:focus-visible .media-hover img + img { opacity: 1; }
+  .card:focus-within .media-hover img + img { opacity: 1; }
   .card:hover .media-hover img:first-child,
-  .card:focus-visible .media-hover img:first-child { opacity: 0; }
+  .card:focus-within .media-hover img:first-child { opacity: 0; }
 }
